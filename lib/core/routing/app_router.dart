@@ -3,8 +3,11 @@ import 'package:docdoc/core/routing/routes.dart';
 import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
 import 'package:docdoc/features/login/ui/login_screen.dart';
 import 'package:docdoc/features/onboarding/onboarding_screen.dart';
+import 'package:docdoc/features/sign_up/ui/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../features/home/ui/home_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -19,6 +22,14 @@ class AppRouter {
             create: (context) => getIt<LoginCubit>(),
             child: const LoginScreen(),
           ),
+        );
+      case Routes.homeScreen:
+        return MaterialPageRoute(
+          builder: (_) => const HomeScreen(),
+        );
+      case Routes.signUpScreen:
+        return MaterialPageRoute(
+          builder: (_) => const SignUPScreen(),
         );
 
       default:
